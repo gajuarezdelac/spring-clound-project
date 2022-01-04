@@ -2,22 +2,11 @@ package com.ws.api.mc_users.domain;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
-import com.sun.istack.NotNull;
-
-@Entity
-public class User implements Serializable{
+public class UserDTO implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(nullable = false, updatable = false)
 	private Long id;
 	
 	private String name;
@@ -27,6 +16,22 @@ public class User implements Serializable{
 	private String email;
 	
 	private String password;
+
+	private String encryptedPassword;
+	
+	/**
+	 * @return the id
+	 */
+	public Long getId() {
+		return id;
+	}
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 	/**
 	 * @return the name
@@ -83,5 +88,21 @@ public class User implements Serializable{
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+	/**
+	 * @return the encryptedPassword
+	 */
+	public String getEncryptedPassword() {
+		return encryptedPassword;
+	}
+
+	/**
+	 * @param encryptedPassword the encryptedPassword to set
+	 */
+	public void setEncryptedPassword(String encryptedPassword) {
+		this.encryptedPassword = encryptedPassword;
+	}
 	
+	
+
 }
