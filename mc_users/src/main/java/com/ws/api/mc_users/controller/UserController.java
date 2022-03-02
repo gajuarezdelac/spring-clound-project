@@ -21,7 +21,7 @@ import com.ws.api.mc_users.domain.UserDTO;
 import com.ws.api.mc_users.service.IUserService;
 
 @RestController
-@RequestMapping("user")
+@RequestMapping("/user")
 public class UserController {
 	
 	@Autowired
